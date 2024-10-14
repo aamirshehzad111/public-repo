@@ -1,0 +1,17 @@
+name: Deploy On-Demand Environment
+
+on:
+  workflow_call:
+    inputs:
+      pr_id:
+        description: ID for the PR to be deployed to an on-demand environment
+        type: string
+        required: true
+
+jobs:
+  build_variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Build variables
+        run: |
+          echo "this is workflow_call event -- ${{ inputs.pr_id }}"
