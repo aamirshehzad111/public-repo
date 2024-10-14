@@ -13,6 +13,6 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' }}
     uses: ./.github/workflows/OnDemandEnvironmentNamespaceConfigure.yml
     with:
-      namespace_name: env-ode-pr-${{ github.event.inputs.pr_number }}
+      pr_id: env-ode-pr-${{ github.event.inputs.pr_number }}
     secrets: inherit
 
